@@ -1,14 +1,13 @@
 {
   "name": "react-native-lexical-list",
   "title": "React Native Lexical List",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "List with alphabets on the side for scroll jump",
   "main": "src/index.ts",
   "files": [
     "README.md",
     "android",
-    "src/index.ts",
-    "src/components/lexicalSectionList/LexicalSectionList.tsx",
+    "src/*",
     "ios",
     "react-native-lexical-list.podspec"
   ],
@@ -17,8 +16,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-lexical-list.git",
-    "baseUrl": "https://github.com/github_account/react-native-lexical-list"
+    "url": "git+https://github.com/kkaushik90/react-native-lexical-list.git",
+    "baseUrl": "https://github.com/kkaushik90/react-native-lexical-list"
   },
   "keywords": [
     "react-native"
@@ -36,9 +35,7 @@
   },
   "devDependencies": {
     "react": "^16.9.0",
-    "react-native": "^0.62.2"
-  },
-  "dependencies": {
+    "react-native": "^0.62.2",
     "prettier": "^2.0.5"
   }
 }

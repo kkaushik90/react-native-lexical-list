@@ -1,8 +1,3 @@
-import { NativeModules } from "react-native";
-import { LexicalSectionList } from "./components/lexicalSectionList/LexicalSectionList";
-
-// const { LexicalList } = NativeModules;
+import LexicalSectionList from "./components/lexicalSectionList/LexicalSectionList";
 
 export default LexicalSectionList;
-
-export { LexicalSectionList };

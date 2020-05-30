@@ -1,17 +1,16 @@
 # react-native-lexical-list
 
+## This project is under development, please do not use.
+
 ## Getting started
 
 `$ npm install react-native-lexical-list --save`
 
-### Mostly automatic installation
+or
 
-`$ react-native link react-native-lexical-list`
+`$ yarn add react-native-lexical-list`
 
 ## Usage
 ```javascript
 import LexicalList from 'react-native-lexical-list';
-
-// TODO: What to do with the module?
-LexicalList;
 ```

@@ -1,6 +1,8 @@
 import React from "react";
 import { Text } from "react-native";
 
-export const LexicalSectionList = () => {
+const LexicalSectionList = () => {
   return <Text>Testing</Text>;
 };
+
+export default LexicalSectionList;
