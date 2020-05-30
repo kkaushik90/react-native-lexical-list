@@ -34,8 +34,13 @@
     "react-native": ">=0.60.0-rc.0 <1.0.x"
   },
   "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-native": "^0.62.12",
+    "prettier": "^2.0.5",
     "react": "^16.9.0",
-    "react-native": "^0.62.2",
-    "prettier": "^2.0.5"
+    "react-native": "^0.62.2"
+  },
+  "dependencies": {
+    "react-native-gesture-handler": "^1.6.1"
   }
 }

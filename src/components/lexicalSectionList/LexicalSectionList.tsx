@@ -1,8 +1,10 @@
 import React from "react";
-import { Text } from "react-native";
+import { SectionListProps, SectionList } from "react-native";
 
-const LexicalSectionList = () => {
-  return <Text>Testing</Text>;
+interface LexicalSectionListProps extends SectionListProps<any> {}
+
+const LexicalSectionList = (props: LexicalSectionListProps) => {
+  return <SectionList {...props} />;
 };
 
 export default LexicalSectionList;
