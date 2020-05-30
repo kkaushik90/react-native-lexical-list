@@ -1,15 +1,12 @@
 {
   "name": "react-native-lexical-list",
   "title": "React Native Lexical List",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "List with alphabets on the side for scroll jump",
   "main": "src/index.ts",
   "files": [
     "README.md",
-    "android",
-    "src/*",
-    "ios",
-    "react-native-lexical-list.podspec"
+    "src/*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -41,6 +38,7 @@
     "react-native": "^0.62.2"
   },
   "dependencies": {
-    "react-native-gesture-handler": "^1.6.1"
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-section-list-get-item-layout": "^2.2.3"
   }
 }
