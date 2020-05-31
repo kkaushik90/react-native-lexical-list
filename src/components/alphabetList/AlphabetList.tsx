@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import {
+  Animated,
+  StyleProp,
+  Text,
+  TextStyle,
   TouchableOpacity,
   View,
-  Text,
-  StyleProp,
-  TextStyle,
   ViewStyle,
 } from "react-native";
-import { PanGestureHandler } from "react-native-gesture-handler";
+import { PanGestureHandler, State } from "react-native-gesture-handler";
 
 export interface AlphabetListProps {
   data: (string | number)[];
@@ -15,7 +16,11 @@ export interface AlphabetListProps {
   itemStyle?: StyleProp<TextStyle>;
   onItemSelect: (item: string | number, index: number) => void;
   containerStyle?: StyleProp<ViewStyle>;
+  indicatorStyle?: StyleProp<ViewStyle>;
+  indicatorTextStyle?: StyleProp<TextStyle>;
 }
+
+const INDICATOR_RADIUS = 24; // TODO support shapes other than a circle
 
 export const AlphabetList = ({
   data,
@@ -23,11 +28,17 @@ export const AlphabetList = ({
   itemStyle,
   onItemSelect,
   containerStyle,
+  indicatorStyle,
+  indicatorTextStyle,
 }: AlphabetListProps) => {
-  const setSelectedItem = useState(data[0])[1];
+  const [selectedItem, setSelectedItem] = useState(data[0]);
+  const [indicatorActive, setIndicatorActive] = useState(true);
+  const dragY = new Animated.Value(0);
 
   const onPanGestureEvent = (e) => {
-    calculateAndUpdateSelectedItem(e.nativeEvent.y);
+    const positionY = e.nativeEvent.y;
+    calculateAndUpdateSelectedItem(positionY);
+    dragY.setValue(positionY - INDICATOR_RADIUS);
   };
 
   const calculateAndUpdateSelectedItem = (positionY: number) => {
@@ -47,19 +58,70 @@ export const AlphabetList = ({
     });
   };
 
+  const onPanGestureStateChange = (e) => {
+    const nativeEvent = e.nativeEvent;
+    setTimeout(
+      () => setIndicatorActive(nativeEvent.state === State.ACTIVE),
+      50
+    );
+  };
+
   return (
-    <PanGestureHandler onGestureEvent={onPanGestureEvent}>
-      <View style={[{ alignItems: "center" }, containerStyle]}>
-        {data.map((item, index) => (
-          <TouchableOpacity
-            style={{ height: itemHeight }}
-            key={item}
-            onPress={() => onItemSelected(item, index)}
+    <View style={{ flexDirection: "row", alignItems: "flex-start" }}>
+      {indicatorActive && (
+        <Animated.View
+          style={[
+            {
+              width: INDICATOR_RADIUS * 2,
+              height: INDICATOR_RADIUS * 2,
+              marginRight: 24,
+              alignItems: "center",
+              justifyContent: "center",
+            },
+            { transform: [{ translateY: dragY }] },
+          ]}
+        >
+          <View
+            style={[
+              {
+                position: "absolute",
+                width: INDICATOR_RADIUS * 2,
+                height: INDICATOR_RADIUS * 2,
+                borderRadius: INDICATOR_RADIUS,
+                alignSelf: "stretch",
+                flex: 1,
+                opacity: 0.5,
+                backgroundColor: "#FE4042",
+              },
+              indicatorStyle,
+            ]}
+          />
+          <Text
+            style={[
+              { color: "white", fontWeight: "bold", fontSize: 24 },
+              indicatorTextStyle,
+            ]}
           >
-            <Text style={[itemStyle, { maxHeight: itemHeight }]}>{item}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-    </PanGestureHandler>
+            {selectedItem}
+          </Text>
+        </Animated.View>
+      )}
+      <PanGestureHandler
+        onGestureEvent={onPanGestureEvent}
+        onHandlerStateChange={onPanGestureStateChange}
+      >
+        <View style={[{ alignItems: "center" }, containerStyle]}>
+          {data.map((item, index) => (
+            <TouchableOpacity
+              style={{ height: itemHeight }}
+              key={item}
+              onPress={() => onItemSelected(item, index)}
+            >
+              <Text style={[itemStyle, { maxHeight: itemHeight }]}>{item}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </PanGestureHandler>
+    </View>
   );
 };

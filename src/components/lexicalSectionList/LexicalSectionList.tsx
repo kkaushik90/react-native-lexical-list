@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import sectionListGetItemLayout from "react-native-section-list-get-item-layout";
 import { AlphabetList } from "../..";
-import { AlphabetListProps } from "../alphabetList/AlphabetList";
 
 interface LexicalSectionListProps extends SectionListProps<any> {
   style?: StyleProp<ViewStyle>;
