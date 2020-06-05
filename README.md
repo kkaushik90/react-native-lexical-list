@@ -3,13 +3,19 @@
 This is a wrapper to the [SectionList](https://reactnative.dev/docs/sectionlist), adding support for alphabets on the
 side, which can be dragged or clicked, to scroll the list to the corresponding section.
 
+## Demo
+
+[Source code](./demo)
+
+![demo gif](https://github.com/kkaushik90/react-native-lexical-list/blob/master/demo/lexical_list_demo_1.gif?raw=true)
+
 ## Getting started
 
-`$ npm install react-native-lexical-list --save`
+`$ yarn add react-native-lexical-list`
 
 or
 
-`$ yarn add react-native-lexical-list`
+`$ npm install react-native-lexical-list`
 
 ## Usage
 
@@ -68,4 +74,4 @@ import { AlphabetList } from "react-native-lexical-list";
 `AlphabetList` takes an array of strings or numbers. It doesn't have to be alphabets, it can be any string of any
 length.
 
-**More documentation, demo and features coming soon!**
+**More documentation and features coming soon!**

@@ -5906,10 +5906,10 @@ react-native-gesture-handler@^1.6.1, react-native-gesture-handler@~1.6.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
-react-native-lexical-list@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-lexical-list/-/react-native-lexical-list-1.0.1.tgz#d7ec3fcbf8e4818ac1babc9c7324bab9e7a2adb1"
-  integrity sha512-VLH1riuHWCRxTq3nOkSZRfQvLlCt4plhdirfLPN1SoGidKnsFck99IC7U/p1OZQAiTKCd7MKqYFVJOiYb01j4A==
+react-native-lexical-list@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-lexical-list/-/react-native-lexical-list-1.0.2.tgz#86bb9b8bcfeb8cf2ceb9356c4ad994b7da308a98"
+  integrity sha512-7HV8Iu6y8YHeH3tcRH0QDqNu99zWj2T/st35/hElxDoWc9xczYsjRHFt9Pk25Pl6hDYoU4zyX5QLkRZ7lT4e8Q==
   dependencies:
     react-native-gesture-handler "^1.6.1"
     react-native-section-list-get-item-layout "^2.2.3"
