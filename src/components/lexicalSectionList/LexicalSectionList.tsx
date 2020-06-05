@@ -63,6 +63,7 @@ const LexicalSectionList = (props: LexicalSectionListProps) => {
         getItemLayout={(data, index) =>
           getItemLayout(data as { title: string; data: any[] }[], index)
         }
+        stickySectionHeadersEnabled={true}
         maxToRenderPerBatch={100}
         initialNumToRender={100}
         {...props}

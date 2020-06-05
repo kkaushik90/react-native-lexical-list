@@ -32,7 +32,7 @@ export const AlphabetList = ({
   indicatorTextStyle,
 }: AlphabetListProps) => {
   const [selectedItem, setSelectedItem] = useState(data[0]);
-  const [indicatorActive, setIndicatorActive] = useState(true);
+  const [indicatorActive, setIndicatorActive] = useState(false);
   const dragY = new Animated.Value(0);
 
   const onPanGestureEvent = (e) => {
