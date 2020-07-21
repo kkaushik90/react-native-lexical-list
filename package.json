@@ -1,7 +1,7 @@
 {
   "name": "react-native-lexical-list",
   "title": "React Native Lexical List",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "List with alphabets on the side for scroll jump",
   "main": "src/index.ts",
   "files": [
